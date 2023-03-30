@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
 
 * {
     margin: 0;
@@ -7,9 +7,19 @@
 }
 
 html {
+    font-size: 15px;
 }
 
 :root {
+    --primary-radius: 0.5rem;
+    --secondary-radius: 2rem;
+
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+
+    --transparent-white-paragraphs: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray-bg-heading-button: hsl(0, 0%, 95%);
 }
 
 img {
@@ -20,22 +30,104 @@ img {
 }
 
 body {
-    font-family: 'Red Hat Display', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    background-color: var(--very-light-gray-bg-heading-button);
 
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
 main {
-    width: 20.5rem;
+    width: fit-content;
     height: auto;
     overflow: hidden;
+    border-radius: var(--primary-radius);
+    outline: none;
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-container {
+    width: 20rem;
+    height: auto;
+    padding: 3rem;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    gap: 5rem;
+}
+
+.sedans-card {
+    background-color: var(--bright-orange);
+}
+
+.suvs-card {
+    background-color: var(--dark-cyan);
+}
+
+.luxury-card {
+    background-color: var(--very-dark-cyan);
+}
+
+.card-top-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.img-container {
+    line-height: 0;
+}
+
+.title-container {
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 3rem;
+    color: var(--very-light-gray-bg-heading-button);
+    text-transform: uppercase;
+}
+
+.description-container {
+    line-height: 1.75rem;
+    color: var(--transparent-white-paragraphs);
+}
+
+.learn-more-button {
+    font-size: 1.15rem;
+    padding: 1.15rem 2rem;
+    border-radius: var(--secondary-radius);
+    outline: none;
+    border: none;
+}
+
+.sedans-card .learn-more-button {
+    color: var(--bright-orange);
+}
+
+.suvs-card .learn-more-button {
+    color: var(--dark-cyan);
+}
+
+.luxury-card .learn-more-button {
+    color: var(--very-dark-cyan);
+}
+
+@media screen and (max-width: 376px) {
+    body {
+        padding: 6rem 0;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .card-container {
+        width: 21.5rem;
+    }
 }
